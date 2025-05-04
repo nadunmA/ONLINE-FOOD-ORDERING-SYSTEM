@@ -17,7 +17,7 @@ public class DeliveryController {
 	
 	
 	//insert data
-	private static boolean insertData(String dpId, String name, String phone, String email, String location, String assignedOrders,
+	public static boolean insertData(String dpId, String name, String phone, String email, String location, String assignedOrders,
 			String paymentStatus, String orderStatus, String createdAt, String updatedAt) {
 		
 		
