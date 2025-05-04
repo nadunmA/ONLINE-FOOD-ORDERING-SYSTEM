@@ -10,14 +10,14 @@ public class dPersonModel {
 	private String assignedOrders;
 	private String paymentStatus;
 	private String orderStatus;
-	private String createdAt;
-	private String updatedAt;
+	//private String createdAt;
+	//private String updatedAt;
 	
 	
 	//constructor part
 	
 	public dPersonModel(String dpId, String name, String phone, String email, String location, String assignedOrders,
-						String paymentStatus, String orderStatus, String createdAt, String updatedAt) {
+						String paymentStatus, String orderStatus) {
 		
 		super();
 		this.dpId = dpId;
@@ -28,8 +28,8 @@ public class dPersonModel {
 		this.assignedOrders = assignedOrders;
 		this.paymentStatus = paymentStatus;
 		this.orderStatus = orderStatus;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
+		//this.createdAt = createdAt;
+		//this.updatedAt = updatedAt;
 	}
 	
 	
@@ -100,7 +100,7 @@ public class dPersonModel {
 		this.orderStatus = orderStatus;
 	}
 
-	public String getCreatedAt() {
+	/*public String getCreatedAt() {
 		return createdAt;
 	}
 
@@ -114,7 +114,7 @@ public class dPersonModel {
 
 	public void setUpdatedAt(String updatedAt) {
 		this.updatedAt = updatedAt;
-	}
+	}*/
 	
 	
 	

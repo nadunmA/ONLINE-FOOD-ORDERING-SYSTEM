@@ -46,12 +46,6 @@
             	<option value="Delivered">Delivered</option>
             	
         	</select><br/>
-        
-        	<label>Created at : </label>
-        	<input type="datetime-local" name="createdAt" readonly></input>
-        
-        	<label>Updated at : </label>
-        	<input type="datetime-local" name="updatedAt" readonly></input>
 
         	<button type="submit">Submit</button>
         

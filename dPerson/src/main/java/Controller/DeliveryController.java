@@ -18,7 +18,7 @@ public class DeliveryController {
 	
 	//insert data
 	public static boolean insertData(String dpId, String name, String phone, String email, String location, String assignedOrders,
-			String paymentStatus, String orderStatus, String createdAt, String updatedAt) {
+			String paymentStatus, String orderStatus) {
 		
 		
 		boolean isSuccess = false;

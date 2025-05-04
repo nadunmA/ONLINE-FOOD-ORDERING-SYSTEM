@@ -8,15 +8,16 @@
 
 
 
-     <servlet>
-     	<servlet-name>DeliverypInsertServlet</servlet-name>
-     	<servlet-class>dPerson.DeliverypInsertServlet</servlet-class>
-     </servlet>
+ <servlet>
+    <servlet-name>DeliverypInsertServlet</servlet-name>
+    <servlet-class>Servlet.DeliverypInsertServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>DeliverypInsertServlet</servlet-name>
+    <url-pattern>/DeliverypInsertServlet</url-pattern>
+</servlet-mapping>
      
-     <servlet-mapping>
-     	<servlet-name>DeliverypInsertServlet</servlet-name>
-     	<url-pattern>/DeliverypInsertServlet</url-pattern>
-     </servlet-mapping>
 
 
 </web-app>

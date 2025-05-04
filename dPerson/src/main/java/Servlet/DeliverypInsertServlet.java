@@ -28,13 +28,13 @@ public class DeliverypInsertServlet extends HttpServlet {
 		 String assignedOrders = request.getParameter("assignedOrders");
 		 String paymentStatus = request.getParameter("paymentStatus");
 		 String orderStatus = request.getParameter("orderStatus");
-		 String createdAt = request.getParameter("createdAt");
-		 String updatedAt = request.getParameter("updatedAt");
+		 //String createdAt = request.getParameter("createdAt");
+		 //String updatedAt = request.getParameter("updatedAt");
 		 
 		
 		 boolean isTrue;
 		 
-		 isTrue = DeliveryController.insertData(dpId, name, phone, email, location, assignedOrders, paymentStatus, orderStatus, createdAt, updatedAt);
+		 isTrue = DeliveryController.insertData(dpId, name, phone, email, location, assignedOrders, paymentStatus, orderStatus);
 		 
 		 if(isTrue == true) {
 			 
@@ -44,6 +44,8 @@ public class DeliverypInsertServlet extends HttpServlet {
 		 }else {
 			 
 			 RequestDispatcher dis2 = request.getRequestDispatcher("wrong.jsp");
+			 //RequestDispatcher dis2 = request.getRequestDispatcher("index.jsp");
+
 			 dis2.forward(request, response);
 			 
 		 }
