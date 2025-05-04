@@ -11,7 +11,7 @@
 <body>
 	
 	<h2>Delivery Person Details</h2>
-		<form action="" method="post">
+		<form action="DeliverypInsertServlet" method="post">
 	
         	<label>ID : </label>
         	<input type="text" name="dpId" required /><br/>
