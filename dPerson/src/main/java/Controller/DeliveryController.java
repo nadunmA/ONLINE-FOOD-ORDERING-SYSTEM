@@ -34,9 +34,26 @@ public class DeliveryController {
 		             assignedOrders + "', '" + paymentStatus + "', '" + orderStatus + "')";
 
 			
-		}catch{
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs > 0) {
+				
+				isSuccess = true;
+				
+			
+			}else {
+				
+				isSuccess = false;
+				
+			}
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
 			
 		}
+		
+		return isSuccess;
 		
 		
 	}
