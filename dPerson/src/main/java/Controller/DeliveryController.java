@@ -3,6 +3,11 @@ package Controller;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import Model.dPersonModel;
+import Model.dbConnect;
 
 
 
@@ -29,7 +34,7 @@ public class DeliveryController {
 			stmt = con.createStatement();
 			
 			//sql query
-			String sql = "INSERT INTO delivery_person (name, phone, email, location, assignedOrders, paymentStatus, orderStatus) " +
+			String sql = "INSERT INTO deliveryPerson (name, phone, email, location, assignedOrders, paymentStatus, orderStatus) " +
 		             "VALUES ('" + name + "', '" + phone + "', '" + email + "', '" + location + "', '" +
 		             assignedOrders + "', '" + paymentStatus + "', '" + orderStatus + "')";
 
@@ -55,6 +60,35 @@ public class DeliveryController {
 		
 		return isSuccess;
 		
+		
+	}
+	
+	public static List<dPersonModel> getBydpId (String dpId) {
+		
+		
+		ArrayList <dPersonModel> dPersonModel = new ArrayList<>();
+		
+		try {
+			
+			//DBconnection
+			con=dbConnect.getConnection();
+			stmt=con.createStatement();
+			
+			String sql = "SELECT * FROM deliveryPerson WHERE dpId '"+convertedID+"'";
+			
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				String dpId = rs.getString(1);
+			}
+			
+		}
+		catch(Exception e) {
+			
+			e.printStackTrace();
+			
+		}
+		return dPersonModel;
 		
 	}
 	
