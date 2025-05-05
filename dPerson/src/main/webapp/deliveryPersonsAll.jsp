@@ -21,6 +21,9 @@
             <th>Assigned Orders</th>
             <th>Payment Status</th>
             <th>Order Status</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+             <th>Action</th>
         </tr>
 
 		<c:forEach var="deliveryPersons" items="${deliveryPersonsAll}">        
@@ -34,6 +37,19 @@
             <td>${deliveryPersons.assignedOrders}</td>
             <td>${deliveryPersons.paymentStatus}</td>
             <td>${deliveryPersons.orderStatus}</td>
+            
+            
+            <td>
+            
+            	<a href="DeliveryPersonUpdate.jsp?dpId=${deliveryPersons.dpId}&name=${deliveryPersons.name}&phone=${deliveryPersons.phone}&email=${deliveryPersons.email}
+            	&location=${deliveryPersons.location}&assignedOrders=${deliveryPersons.assignedOrders}&paymentStatus=${deliveryPersons.paymentStatus}&orderStatus=${deliveryPersons.orderStatus}">
+            			
+            		<button>Update</button>
+            		
+            	</a>
+            
+            </td>
+            
 		</tr>
 		</c:forEach>
     </table>

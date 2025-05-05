@@ -48,6 +48,11 @@ public class DeliveryController {
 
 	        if (rs > 0) {
 	            isSuccess = true;
+	            
+	        }else {
+	        	
+	        	isSuccess = false;
+	        	
 	        }
 
 	        stmt.close();
@@ -158,6 +163,57 @@ public class DeliveryController {
 		}
 		
 		return deliveryPersons;
+		
+	}
+	
+	//Update Data
+	public static boolean updateData(String dpId, String name, String phone, String email, String location, String assignedOrders, String paymentStatus, String orderStatus) {
+		
+		 boolean isSuccess = false;
+		
+		try {
+			
+			//db connection
+			con = dbConnect.getConnection();
+			stmt = con.createStatement();
+			
+			//SQL query
+			String sql = "UPDATE deliveryPerson SET name = ?, phone = ?, email = ?, location = ?, " +
+		             "assignedOrders = ?, paymentStatus = ?, orderStatus = ? WHERE dpId = ?";
+
+			java.sql.PreparedStatement stmt = con.prepareStatement(sql);
+
+			stmt.setString(1, name);
+			stmt.setString(2, phone);
+			stmt.setString(3, email);
+			stmt.setString(4, location);
+			stmt.setString(5, assignedOrders);
+			stmt.setString(6, paymentStatus);
+			stmt.setString(7, orderStatus);
+			stmt.setString(8, dpId);
+
+			
+			int rs = stmt.executeUpdate();
+
+	        if (rs > 0) {
+	            isSuccess = true;
+	            
+	        }
+
+	        stmt.close();
+	        con.close();
+	        
+			
+			
+		}catch (Exception e){
+			
+			e.printStackTrace();
+			
+			
+		}
+		return isSuccess;
+		
+		
 		
 	}
 

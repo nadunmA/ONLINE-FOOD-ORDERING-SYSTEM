@@ -21,15 +21,25 @@
 
 
  <servlet>
-    <servlet-name>DeliveryPGetAllServlet.java</servlet-name>
+    <servlet-name>DeliveryPGetAllServlet</servlet-name>
     <servlet-class>Servlet.DeliveryPGetAllServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>
-    <servlet-name>DeliveryPGetAllServlet.java</servlet-name>
+    <servlet-name>DeliveryPGetAllServlet</servlet-name>
     <url-pattern>/DeliveryPGetAllServlet</url-pattern>
 </servlet-mapping>
      
+     
 
+ <servlet>
+    <servlet-name>DeliveryPersonUpdateServelt</servlet-name>
+    <servlet-class>Servlet.DeliveryPersonUpdateServelt</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>DeliveryPersonUpdateServelt</servlet-name>
+    <url-pattern>/DeliveryPersonUpdateServelt</url-pattern>
+</servlet-mapping>
 
 </web-app>
