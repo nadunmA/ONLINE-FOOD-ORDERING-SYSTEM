@@ -44,8 +44,6 @@ public class DeliverypInsertServlet extends HttpServlet {
 		 }else {
 			 
 			 RequestDispatcher dis2 = request.getRequestDispatcher("wrong.jsp");
-			 //RequestDispatcher dis2 = request.getRequestDispatcher("index.jsp");
-
 			 dis2.forward(request, response);
 			 
 		 }

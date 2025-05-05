@@ -23,74 +23,46 @@ public class DeliveryController {
 	
 	//insert data
 	public static boolean insertData(String dpId, String name, String phone, String email, String location, String assignedOrders,
-			String paymentStatus, String orderStatus) {
-		
-		
-		boolean isSuccess = false;
-		
-		try {
-			//db connection call
-			con = Model.dbConnect.getConnection();
-			stmt = con.createStatement();
-			
-			//sql query
-			String sql = "INSERT INTO deliveryPerson (name, phone, email, location, assignedOrders, paymentStatus, orderStatus) " +
-		             "VALUES ('" + name + "', '" + phone + "', '" + email + "', '" + location + "', '" +
-		             assignedOrders + "', '" + paymentStatus + "', '" + orderStatus + "')";
+	        String paymentStatus, String orderStatus) {
 
-			
-			int rs = stmt.executeUpdate(sql);
-			
-			if(rs > 0) {
-				
-				isSuccess = true;
-				
-			
-			}else {
-				
-				isSuccess = false;
-				
-			}
-			
-		}catch(Exception e) {
-			
-			e.printStackTrace();
-			
-		}
-		
-		return isSuccess;
-		
-		
+	    boolean isSuccess = false;
+
+	    try {
+	        con = dbConnect.getConnection();
+
+	        String sql = "INSERT INTO deliveryPerson (dpId, name, phone, email, location, assignedOrders, paymentStatus, orderStatus) " +
+	                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+	        java.sql.PreparedStatement stmt = con.prepareStatement(sql);
+
+	        stmt.setString(1, dpId);
+	        stmt.setString(2, name);
+	        stmt.setString(3, phone);
+	        stmt.setString(4, email);
+	        stmt.setString(5, location);
+	        stmt.setString(6, assignedOrders);
+	        stmt.setString(7, paymentStatus);
+	        stmt.setString(8, orderStatus);
+
+	        int rs = stmt.executeUpdate();
+
+	        if (rs > 0) {
+	            isSuccess = true;
+	        }
+
+	        stmt.close();
+	        con.close();
+
+	    } catch (Exception e) {
+	        System.out.println("Insert failed:");
+	        e.printStackTrace();  
+	    }
+
+	    return isSuccess;
 	}
+
 	
-	public static List<dPersonModel> getBydpId (String dpId) {
-		
-		
-		ArrayList <dPersonModel> dPersonModel = new ArrayList<>();
-		
-		try {
-			
-			//DBconnection
-			con=dbConnect.getConnection();
-			stmt=con.createStatement();
-			
-			String sql = "SELECT * FROM deliveryPerson WHERE dpId '"+convertedID+"'";
-			
-			rs = stmt.executeQuery(sql);
-			
-			while(rs.next()) {
-				String dpId = rs.getString(1);
-			}
-			
-		}
-		catch(Exception e) {
-			
-			e.printStackTrace();
-			
-		}
-		return dPersonModel;
-		
-	}
+	
 	
 
 }
