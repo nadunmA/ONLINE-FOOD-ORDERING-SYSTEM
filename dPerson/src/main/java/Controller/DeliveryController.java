@@ -62,7 +62,103 @@ public class DeliveryController {
 	}
 
 	
+	public static List<dPersonModel> getDpId (String dPId) {
+		
+		//int convertedId = Integer.parseInt(dPId);
+		
+		ArrayList <dPersonModel> deliveryPerson = new ArrayList();
+		
+		try {
+			
+			//db connection
+			con = dbConnect.getConnection();
+			stmt = con.createStatement();
+			
+			
+			
+			String sql = "SELECT * FROM deliveryPerson WHERE dpId '"+dPId+"'";
+			
+					
+			rs = stmt.executeQuery(sql);
+			
+			
+			while(rs.next()) {
+				
+				String dpId = rs.getString(1);
+				String name = rs.getString(2);
+				String phone = rs.getString(3);
+				String email = rs.getString(4);
+				String location = rs.getString(5);
+				String assignedOrders = rs.getString(6);
+				String paymentStatus = rs.getString(7);
+				String orderStatus = rs.getString(8);
+				
+				
+				
+				dPersonModel pm = new dPersonModel (dpId, name, phone, email, location, assignedOrders, paymentStatus, orderStatus);
+				deliveryPerson.add(pm);
+				
+			}
+			
+		}
+		catch(Exception e){
+			
+			e.printStackTrace();
+			
+		}
+		
+		return deliveryPerson;
+		
+	}
 	
 	
+	//Get All Data
+	public static List<dPersonModel> getAllDp () {
+		
+		ArrayList <dPersonModel> deliveryPersons = new ArrayList();
+		
+		
+		try {
+			
+			//db connection
+			con = dbConnect.getConnection();
+			stmt = con.createStatement();
+			
+			
+			
+			String sql = "SELECT * FROM deliveryPerson";
+			
+					
+			rs = stmt.executeQuery(sql);
+			
+			
+			while(rs.next()) {
+				
+				String dpId = rs.getString(1);
+				String name = rs.getString(2);
+				String phone = rs.getString(3);
+				String email = rs.getString(4);
+				String location = rs.getString(5);
+				String assignedOrders = rs.getString(6);
+				String paymentStatus = rs.getString(7);
+				String orderStatus = rs.getString(8);
+				
+				
+				
+				dPersonModel pm = new dPersonModel (dpId, name, phone, email, location, assignedOrders, paymentStatus, orderStatus);
+				deliveryPersons.add(pm);
+				
+			}
+			
+		}
+		catch(Exception e){
+			
+			e.printStackTrace();
+			
+		}
+		
+		return deliveryPersons;
+		
+	}
 
 }

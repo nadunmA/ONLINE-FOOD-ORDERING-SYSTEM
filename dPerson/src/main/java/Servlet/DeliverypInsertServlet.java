@@ -39,7 +39,7 @@ public class DeliverypInsertServlet extends HttpServlet {
 		 if(isTrue == true) {
 			 
 			 String alterMessage = "Data Insert Successful";
-			 response.getWriter().println("<script> alert('"+alterMessage+"'); window.location.href='done.jsp'</script>");
+			 response.getWriter().println("<script> alert('"+alterMessage+"'); window.location.href='DeliveryPGetAllServlet'</script>");
 			 
 		 }else {
 			 

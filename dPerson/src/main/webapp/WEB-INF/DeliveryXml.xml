@@ -17,6 +17,18 @@
     <servlet-name>DeliverypInsertServlet</servlet-name>
     <url-pattern>/DeliverypInsertServlet</url-pattern>
 </servlet-mapping>
+
+
+
+ <servlet>
+    <servlet-name>DeliveryPGetAllServlet.java</servlet-name>
+    <servlet-class>Servlet.DeliveryPGetAllServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>DeliveryPGetAllServlet.java</servlet-name>
+    <url-pattern>/DeliveryPGetAllServlet</url-pattern>
+</servlet-mapping>
      
 
 
