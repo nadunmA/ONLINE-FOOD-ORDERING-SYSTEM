@@ -42,4 +42,17 @@
     <url-pattern>/DeliveryPersonUpdateServelt</url-pattern>
 </servlet-mapping>
 
+
+
+ <servlet>
+    <servlet-name>DeliveryPersonDeleteServlet</servlet-name>
+    <servlet-class>Servlet.DeliveryPersonDeleteServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>DeliveryPersonDeleteServlet</servlet-name>
+    <url-pattern>/DeliveryPersonDeleteServlet</url-pattern>
+</servlet-mapping>
+
 </web-app>
+

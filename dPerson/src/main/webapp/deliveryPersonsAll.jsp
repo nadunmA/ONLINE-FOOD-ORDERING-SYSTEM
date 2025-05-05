@@ -47,6 +47,14 @@
             		<button>Update</button>
             		
             	</a>
+            	
+      
+            
+            	<form action="DeliveryPersonDeleteServlet" method="post">
+            	<input type="hidden" name="dpId" value="${deliveryPersons.dpId}"></input>
+            		<button>Delete</button>
+            		
+            	</form>
             
             </td>
             

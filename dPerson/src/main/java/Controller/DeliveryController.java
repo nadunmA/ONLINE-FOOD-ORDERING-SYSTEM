@@ -1,6 +1,7 @@
 package Controller;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class DeliveryController {
 	        stmt.setString(7, paymentStatus);
 	        stmt.setString(8, orderStatus);
 
-	        int rs = stmt.executeUpdate();
+	        int rs = stmt.executeUpdate(); //sql use brackets
 
 	        if (rs > 0) {
 	            isSuccess = true;
@@ -69,7 +70,6 @@ public class DeliveryController {
 	
 	public static List<dPersonModel> getDpId (String dPId) {
 		
-		//int convertedId = Integer.parseInt(dPId);
 		
 		ArrayList <dPersonModel> deliveryPerson = new ArrayList();
 		
@@ -198,6 +198,10 @@ public class DeliveryController {
 	        if (rs > 0) {
 	            isSuccess = true;
 	            
+	        }else {
+	        	
+	        	isSuccess = false;
+	        	
 	        }
 
 	        stmt.close();
@@ -216,5 +220,32 @@ public class DeliveryController {
 		
 		
 	}
+	
+	//Delete Data
+	public static boolean deletedData(String dPId) {
+	    boolean isSuccess = false;
+
+	    try {
+	        Connection con = dbConnect.getConnection(); // Use local connection
+	        String sql = "DELETE FROM deliveryPerson WHERE dpId = ?";
+	        PreparedStatement pstmt = con.prepareStatement(sql);
+
+	        pstmt.setString(1, dPId);
+	        int rs = pstmt.executeUpdate();
+
+	        if (rs > 0) {
+	            isSuccess = true;
+	        }
+
+	        pstmt.close();
+	        con.close();
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return isSuccess;
+	}
+
 
 }
