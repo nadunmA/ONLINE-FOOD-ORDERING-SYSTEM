@@ -14,7 +14,7 @@
 <body class="text-white">
   
     <video autoplay muted loop id="backgroundVideo">
-      <source src="Images/Sora.mp4" type="video/mp4">
+      <source src="Images/Sora1.mp4" type="video/mp4">
     </video>
     
 	
