@@ -226,7 +226,7 @@ public class DeliveryController {
 	    boolean isSuccess = false;
 
 	    try {
-	        Connection con = dbConnect.getConnection(); // Use local connection
+	        Connection con = dbConnect.getConnection(); 
 	        String sql = "DELETE FROM deliveryPerson WHERE dpId = ?";
 	        PreparedStatement pstmt = con.prepareStatement(sql);
 
