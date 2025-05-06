@@ -37,7 +37,7 @@
 
 	<div class="flex z-10 items-center justify-center h-screen">
   
-		  <form action="DeliverypInsertServlet" method="post" class="bg-black bg-opacity-45 p-8 rounded-[16px] shadow-lg space-y-14 w-3/4 max-w-5xl">
+		  <form action="DeliveryPersonUpdateServelt" method="post" class="bg-black bg-opacity-45 p-8 rounded-[16px] shadow-lg space-y-14 w-3/4 max-w-5xl">
 
 		  <h2 class="text-4xl font-sans font-bold mb-5 text-center text-white">Delivery Person Details</h2>
 		  
